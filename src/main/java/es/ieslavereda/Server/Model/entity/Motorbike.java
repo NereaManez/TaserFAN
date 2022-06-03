@@ -1,11 +1,13 @@
 package es.ieslavereda.Server.Model.entity;
 
+import java.sql.Date;
+
 public class Motorbike extends Vehicle {
     private float maxVelocity;
     private float displacement;
 
-    public Motorbike(Type type, String matricula, float price, String marca, String descripcion, Color color, int bateria, State estado, String carnet, float maxVelocity, float displacement) {
-        super(type, matricula, price, marca, descripcion, color, bateria, estado, carnet);
+    public Motorbike(Type type, String matricula, float price, String marca, String descripcion, Color color, int bateria, State estado, String carnet, Date date, float maxVelocity, float displacement) {
+        super(type, matricula, price, marca, descripcion, color, bateria, estado, carnet, date);
         this.maxVelocity = maxVelocity;
         this.displacement = displacement;
     }

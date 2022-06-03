@@ -1,25 +1,27 @@
 package es.ieslavereda.Server.Model.entity;
 
+import java.sql.Date;
+
 public class Bike extends Vehicle {
-    private String type;
+    private String tipo;
 
-    public Bike(Type type, String matricula, float price, String marca, String descripcion, Color color, int bateria, State estado, String carnet, String type1) {
-        super(type, matricula, price, marca, descripcion, color, bateria, estado, carnet);
-        this.type = type1;
+    public Bike(Type type, String matricula, float price, String marca, String descripcion, Color color, int bateria, State estado, Date date, String carnet, String tipo) {
+        super(type, matricula, price, marca, descripcion, color, bateria, estado, carnet, date);
+        this.tipo = tipo;
     }
 
-    public String getType() {
-        return type;
+    public String getTipo() {
+        return tipo;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
 
     @Override
     public String toString() {
         return super.toString() + "Bike{" +
-                "type='" + type + '\'' +
+                "type='" + tipo + '\'' +
                 '}';
     }
 }

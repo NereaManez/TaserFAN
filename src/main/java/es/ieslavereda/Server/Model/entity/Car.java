@@ -1,11 +1,13 @@
 package es.ieslavereda.Server.Model.entity;
 
+import java.sql.Date;
+
 public class Car extends Vehicle {
     private int numSeats;
     private int numDoors;
 
-    public Car(Type type, String matricula, float price, String marca, String descripcion, Color color, int bateria, State estado, String carnet, int numSeats, int numDoors) {
-        super(type, matricula, price, marca, descripcion, color, bateria, estado, carnet);
+    public Car(Type type, String matricula, float price, String marca, String descripcion, Color color, int bateria, State estado, String carnet, Date date, int numSeats, int numDoors) {
+        super(type, matricula, price, marca, descripcion, color, bateria, estado, carnet, date);
         this.numSeats = numSeats;
         this.numDoors = numDoors;
     }

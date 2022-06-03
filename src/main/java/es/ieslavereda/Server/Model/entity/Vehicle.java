@@ -1,5 +1,7 @@
 package es.ieslavereda.Server.Model.entity;
 
+import java.sql.Date;
+
 public class Vehicle {
     private String matricula;
     private float price;
@@ -10,8 +12,9 @@ public class Vehicle {
     private State estado;
     private String carnet;
     private Type type;
+    private Date date;
 
-    public Vehicle(Type type, String matricula, float price, String marca, String descripcion, Color color, int bateria, State estado, String carnet) {
+    public Vehicle(Type type, String matricula, float price, String marca, String descripcion, Color color, int bateria, State estado, String carnet, Date date) {
         this.type = type;
         this.matricula = matricula;
         this.price = price;
@@ -21,6 +24,7 @@ public class Vehicle {
         this.bateria = bateria;
         this.estado = estado;
         this.carnet = carnet;
+        this.date = date;
     }
 
     public Vehicle(Type type, String matricula, float price, String marca, Color color, State estado) {
@@ -94,5 +98,37 @@ public class Vehicle {
 
     public void setCarnet(String carnet) {
         this.carnet = carnet;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
+    public void setType(Type type) {
+        this.type = type;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "matricula='" + matricula + '\'' +
+                ", price=" + price +
+                ", marca='" + marca + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", color=" + color +
+                ", bateria=" + bateria +
+                ", estado=" + estado +
+                ", carnet='" + carnet + '\'' +
+                ", type=" + type +
+                ", date=" + date +
+                '}';
     }
 }
