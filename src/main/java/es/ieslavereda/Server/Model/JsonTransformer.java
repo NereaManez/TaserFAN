@@ -1,6 +1,7 @@
 package es.ieslavereda.Server.Model;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 import es.ieslavereda.Server.Model.entity.Result;
 import spark.ResponseTransformer;
@@ -8,7 +9,7 @@ import spark.ResponseTransformer;
 import java.lang.reflect.Type;
 
 public class JsonTransformer<T> implements ResponseTransformer {
-    private Gson gson = new Gson();
+    private Gson gson = new GsonBuilder().setDateFormat("dd-MM-yyyy").create();
 
     @Override
     public String render(Object model) {

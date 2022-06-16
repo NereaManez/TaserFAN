@@ -17,7 +17,7 @@ public class ImpVehicleService implements IVehicleService{
         List<Vehicle> vehicles = new ArrayList<>();
         ResultSet rs;
 
-        String sql = "{call gestionvehiculos.listarvehiculos(?,?)}";
+        String sql = "{call gestionvehiculos.listarVehículos(?,?)}";
 
         try (Connection con = MyDataSource.getOracleDataSource().getConnection();
              CallableStatement cs = con.prepareCall(sql);){
@@ -37,11 +37,11 @@ public class ImpVehicleService implements IVehicleService{
             State s;
 
             while (rs.next()) {
-                matricula = rs.getString("matricula");
-                precio = rs.getFloat("preciohora");
-                marca = rs.getString("marca");
-                color = rs.getString("color");
-                estado = rs.getString("estado");
+                matricula = rs.getString("c1");
+                precio = rs.getFloat("n1");
+                marca = rs.getString("c2");
+                color = rs.getString("c4");
+                estado = rs.getString("c5");
 
                 switch (color) {
                     case "rojo":

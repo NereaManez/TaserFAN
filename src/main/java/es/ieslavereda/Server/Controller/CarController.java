@@ -51,10 +51,9 @@ public class CarController {
 
     public static Result deleteCar(Request req, Response res){
         logger.info("Borrando coche");
-        String body = req.body();
+        String params = req.queryParams("matricula");
 
-        Car c = jsonTransformer.getObject(body, Car.class);
-        Result result = service.deleteCar(c.getMatricula());
+        Result result = service.deleteCar(params);
         
         if(result instanceof Result.Success)
             res.status(200);

@@ -1,6 +1,7 @@
 package es.ieslavereda.Server.Model.entity;
 
 import java.sql.Date;
+import java.util.Objects;
 
 public class Vehicle {
     private String matricula;
@@ -130,5 +131,19 @@ public class Vehicle {
                 ", type=" + type +
                 ", date=" + date +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Vehicle) {
+            Vehicle vehicle = (Vehicle) o;
+            return matricula.equals(vehicle.matricula);
+        } else
+            return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(matricula);
     }
 }
